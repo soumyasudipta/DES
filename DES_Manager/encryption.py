@@ -1,7 +1,7 @@
 import math
 import numpy
-def decryption(message,key):
-    #Initial permut matrix for the datas
+def encryption(message,key):
+    #Initial permut matrix for the data
     IP = [58, 50, 42, 34, 26, 18, 10, 2,
           60, 52, 44, 36, 28, 20, 12, 4,
           62, 54, 46, 38, 30, 22, 14, 6,
@@ -270,7 +270,7 @@ def decryption(message,key):
         return y
     
     
-    # Initialising hex string
+    # Initialising hex string 
     M = message
     K = key
     L = [[0]*32]*17
@@ -336,16 +336,13 @@ def decryption(message,key):
     
         print("\n")
     
-    for i in range(16):
-        print("Round" ,i+1)
-        print("\n")
     
         # Cipher Text Generation
         print("Cipher Text generation")
         tmp_pt = expansion_permutation(R[i])
         print("After Expansion", tmp_pt)
     
-        tmp_pt = XOR_operation(Key[16-i],tmp_pt)
+        tmp_pt = XOR_operation(Key[i+1],tmp_pt)
         print("After K XOR E(R)",tmp_pt)
     
         SBOX_res = []
@@ -379,3 +376,6 @@ def decryption(message,key):
     return (hex(int(listToString(result), 2)))
     
     
+if __name__ == "__main__":
+    initiate()
+# Copyright @hackstaticboss
