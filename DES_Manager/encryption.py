@@ -375,7 +375,4 @@ def encryption(message,key):
     print("Hexadecimal Format",hex(int(listToString(result), 2)))
     return (hex(int(listToString(result), 2)))
     
-    
-if __name__ == "__main__":
-    initiate()
 # Copyright @hackstaticboss
